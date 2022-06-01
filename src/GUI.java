@@ -6,13 +6,13 @@ import java.awt.event.ActionListener;
 
 public class GUI extends JFrame {
     private JTable table;
-    private  JPanel mainPanel;
-    private  JTextField nameText;
+    private JPanel mainPanel;
+    private JTextField nameText;
     private JTextField surnameText;
-    private  JTextField emailText;
-    private  JButton addBtn;
-    private  JButton editBtn;
-    private  JButton removeBtn;
+    private JTextField emailText;
+    private JButton addBtn;
+    private JButton editBtn;
+    private JButton removeBtn;
 
 
     public GUI(String title, DataBase db, ORM orm) {
@@ -27,8 +27,8 @@ public class GUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 User u = new User(orm.getNextIndex(), nameText.getText().toUpperCase(), surnameText.getText().toUpperCase(),
                         emailText.getText().toUpperCase());
-                if(u.getSurname().length() > 0 && u.getName().length() > 0)
-                db.addToDb(u);
+                if (u.getSurname().length() > 0 && u.getName().length() > 0)
+                    db.addToDb(u);
                 else
                     System.out.println("Podaj imie i nazwisko");
                 showDataBase(db);
@@ -66,12 +66,11 @@ public class GUI extends JFrame {
     }
 
 
-
-
-    public void showDataBase(DataBase db){
+    public void showDataBase(DataBase db) {
         table.setModel(DbUtils.resultSetToTableModel(db.selectAll()));
     }
-    public void clearForm(){
+
+    public void clearForm() {
         nameText.setText("");
         surnameText.setText("");
         emailText.setText("");

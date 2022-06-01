@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="rs2xml">
+    <archive path="E:/Java/PBD/libraries/rs2xml.jar" />
+  </library>
+  <library name="sqlite-jdbc-3.36.0.3">
+    <archive path="E:/Java/PBD/libraries/sqlite-jdbc-3.36.0.3.jar" />
+  </library>
+</eclipse-userlibraries>
+
